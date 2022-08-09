@@ -1,0 +1,420 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*{
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+  overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+}
+a:active, a:visited {
+  color: white;
+}
+
+
+.container {
+  width: 100xw;
+  height: auto;
+}
+
+
+/* hamburger */
+.checkbox {
+  display: none;
+}
+
+.button {
+  position: relative;
+  background-color: white;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 5vh; 
+  right: 5vw; 
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem black;
+  text-align: center; 
+  cursor: pointer;
+}
+
+.background {
+  height: 1rem;
+  width: 0.7rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 8vh; 
+  right: 7vw; 
+  background-color: #37c07e;
+  z-index: 1000;
+
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -60vw;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s;
+}
+
+.list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+
+.item {
+  margin: 1rem;
+  font-size: 36px;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    white 50%
+  );
+  background-size: 220%;
+  transition: all 0.4s;
+}
+
+.link:hover,
+.link:active {
+  color: #6097BF;
+  cursor: pointer;
+}
+
+/* functionality */
+.checkbox:checked ~ .background {
+  transform: scale(80);
+}
+.checkbox:checked ~ .nav {
+  opacity: 1;
+  width: 100%;
+  right: 0;
+}
+
+/*  */
+/* styling hamb ICON */
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon,
+.icon::before,
+.icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: gray;
+  display: inline-block;
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+
+.icon::before {
+  top: -0.8rem;
+}
+.icon::after {
+  top: 0.8rem;
+}
+
+.button:hover icon:before {
+  top: -1rem;
+}
+.button:hover icon::after {
+  top: 1rem;
+}
+
+.checkbox:checked + .button .icon {
+  background-color: transparent;
+}
+
+.checkbox:checked + .button .icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.checkbox:checked + .button .icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+/* nav bar desktop */
+
+
+.nav-bar-descktop{
+  position: fixed;
+  background-color: #6097BF;
+  width: 100%;
+  height: 10vh;
+  z-index: 99;
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+}
+a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+body{
+    margin: 0;
+
+}
+.hero{
+    color: white;
+    padding: 5rem;
+    width: 100vw;
+    height: 100vh;
+    background-color: #6097BF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.hero-info-button{
+    margin-top: 30px;
+    padding: 2rem 5rem;
+    display: inline-block;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    letter-spacing: .6rem;
+    background-color: rgba(34, 113, 204, 0.534);
+    transition: all .3s ease;
+    border: #6097BF 1px solid;
+}
+.hero-info-button:hover {
+	background-color: #6097BF;
+	border: 1px white solid;
+}
+.about{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20vh;
+
+}
+
+.about-info-button{
+    padding: 1.6rem 2.6rem;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.548);
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin: 3rem;
+}
+.about-img{
+  width: 60vw;
+  height: auto;
+  position: relative;
+}
+.about-img::after{
+  content: "";
+  background-color: #6097BF;
+  width: 60%;
+  height: 120%;
+  position: absolute;
+  right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+.services{
+  width: 100vw;
+  height: auto;
+  ;
+}
+
+.services-info{
+    width: 95vw;
+    height: 45vh;
+   
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.flip-card{
+    background-color: transparent;
+    width: 25vw;
+    height: 35vh;
+    perspective: 1000px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    
+    display: flex;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+  }
+  
+  .flip-card-front {
+      background-color: #bbb;
+      color: white;
+
+      
+    }
+    
+    
+  .flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 0.8rem;
+  }
+  .front-end-dev{
+    background-image: url("https://img.freepik.com/premium-photo/young-male-developer-is-programming-code-script-late-night-with-beautiful-city-lights_197602-1823.jpg?w=996");
+    background-size: cover;
+	  
+  }
+.hire{
+    background-color: gainsboro;
+    padding: 1.2rem;
+}
+.hire-button{
+    padding: 2rem 3rem;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.267);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .2rem;
+    margin-top: 10px;
+    color: whitesmoke;
+    transition: .3s ease background-color;
+}
+.hire-button:hover{
+    background-color: black;
+}
+
+.footer{
+    background-color: black;
+    color: white;
+}
+
+@media only screen and (min-width: 768px){
+  .nav-bar-mobile{
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px){ 
+  .nav-bar-descktop{
+    display: none;
+  }
+   .hero{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  .about{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  .services-info{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 150vh;
+  }
+  .flip-card{
+    height: 20vh;
+    width: 80%;
+    min-height: 300px;
+    margin: 5px;
+  }
+}
